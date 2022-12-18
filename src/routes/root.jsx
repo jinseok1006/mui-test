@@ -13,15 +13,18 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Link,
 } from '@mui/material';
 
-import logo from '../assets/logo.svg';
-import MenuIcon from '@mui/icons-material/Menu';
+import reactLogo from '../assets/react.svg';
+import viteLogo from '../assets/vite.svg';
 
 import Box from '@mui/material/Box';
 import Globalstyles from '@mui/material/GlobalStyles';
 
-import { Outlet } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+
+import Main from './main';
 
 function Root() {
   return (
@@ -58,14 +61,14 @@ function MyLayout() {
               order: '1',
               display: 'flex',
               justifyContent: 'flex-start',
-              pl: 3,
+              px: 3,
               alignItems: 'center',
               borderTop: '1px solid #e9ecef',
             }}
           >
-            <img src={logo} alt="" />
-            <Typography component="h1" variant="h6" sx={{ ml: 1 }}>
-              React Router Contacts
+            <img src={viteLogo} alt="" width="30px" height="30px" />
+            <Typography component="h1" variant="h6" sx={{ ml: 2 }}>
+              vite@latest
             </Typography>
           </Box>
           <Search />
@@ -73,7 +76,7 @@ function MyLayout() {
           <Aside />
         </Stack>
       </Box>
-      <Box sx={{ flex: '1', height: 'inherit' }}>
+      <Box sx={{ flex: '1 0 550px', height: 'inherit' }}>
         <Main />
       </Box>
     </Box>
@@ -96,34 +99,16 @@ function Search() {
 function Aside() {
   return (
     <List sx={{ flex: '1' }}>
-      <ListItemButton>
-        <ListItemText primary="hello" />
+      <ListItemButton component={RouterLink} to="contacts/1">
+        <ListItemText primary="hello1" />
+      </ListItemButton>
+      <ListItemButton component={RouterLink} to="contacts/2">
+        <ListItemText primary="hello2" />
+      </ListItemButton>
+      <ListItemButton component={RouterLink} to="contacts/3">
+        <ListItemText primary="hello3" />
       </ListItemButton>
     </List>
-  );
-}
-
-function Main() {
-  return (
-    <>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flex: '1' }}>
-            Main Page
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Outlet />
-    </>
   );
 }
 

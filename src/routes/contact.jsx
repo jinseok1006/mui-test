@@ -1,5 +1,4 @@
 import { Form } from 'react-router-dom';
-import ""
 
 export default function Contact() {
   const contact = {
