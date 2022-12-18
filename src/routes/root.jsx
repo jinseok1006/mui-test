@@ -16,7 +16,6 @@ import {
   Link,
 } from '@mui/material';
 
-import reactLogo from '../assets/react.svg';
 import viteLogo from '../assets/vite.svg';
 
 import Box from '@mui/material/Box';
