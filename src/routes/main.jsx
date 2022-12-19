@@ -2,24 +2,7 @@ import react from 'react';
 import { Link as RouterLink, Outlet } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import {
-  CssBaseline,
-  Stack,
-  Container,
-  Typography,
-  ListItemText,
-  List,
-  ListItemButton,
-  Divider,
-  ListItem,
-  TextField,
-  Button,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Link,
-  Box,
-} from '@mui/material';
+import { Typography, AppBar, Toolbar, IconButton, Box } from '@mui/material';
 
 function Main() {
   return (
@@ -40,7 +23,7 @@ function Main() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box m={3}>
+      <Box my={3}>
         <Outlet />
       </Box>
     </>

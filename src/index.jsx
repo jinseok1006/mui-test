@@ -8,14 +8,14 @@ import '@fontsource/roboto/700.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Root from './routes/root';
+import App from './routes/App';
 import ErrorPage from './error-page';
 import Contact from './routes/contact';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {

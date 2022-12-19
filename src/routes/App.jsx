@@ -1,19 +1,13 @@
 import {
   CssBaseline,
   Stack,
-  Container,
   Typography,
   ListItemText,
   List,
   ListItemButton,
   Divider,
-  ListItem,
   TextField,
   Button,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Link,
 } from '@mui/material';
 
 import viteLogo from '../assets/vite.svg';
@@ -25,7 +19,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import Main from './main';
 
-function Root() {
+export default function App() {
   return (
     <>
       <CssBaseline />
@@ -36,7 +30,6 @@ function Root() {
           '#root': { height: 'inherit' },
         }}
       />
-
       <MyLayout />
     </>
   );
@@ -51,6 +44,9 @@ function MyLayout() {
           height: 'inherit',
           backgroundColor: '#f8f9fa',
           borderRight: '1px solid #e9ecef',
+          position: 'fixed',
+          top: 0,
+          left: 0,
         }}
       >
         <Stack sx={{ height: 'inherit' }}>
@@ -75,7 +71,14 @@ function MyLayout() {
           <Aside />
         </Stack>
       </Box>
-      <Box sx={{ flex: '1 0 550px', height: 'inherit' }}>
+      <Box
+        sx={{
+          flex: '1 0 550px',
+          height: 'inherit',
+          overflowX: 'visible',
+          ml: '330px',
+        }}
+      >
         <Main />
       </Box>
     </Box>
@@ -110,5 +113,3 @@ function Aside() {
     </List>
   );
 }
-
-export default Root;
